@@ -14,4 +14,4 @@ categories:
 
 4. aaaaaaaa
 
-![](/images/线程状态.jpg)
+![](/images/Java中线程的状态/线程状态.jpg)
