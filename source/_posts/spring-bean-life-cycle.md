@@ -28,4 +28,5 @@ categories:
 
 注意：一个 <font color="red">InstantiationAwareBeanPostProcessor</font> 或 <font color="blue">BeanPostProcessor</font> 是对所有 spring bean 都生效的！
 
+------
 ![福利](/images/骚图/三国杀/何太后.jpg)
