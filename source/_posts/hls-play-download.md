@@ -2,6 +2,10 @@
 title: HLS（m3u8）视频流的播放和下载
 date: 2022-01-03 14:22:15
 tags:
+  - hls
+  - m3u8
+  - PotPlayer
+  - VLC
 categories:
   - 其他
 ---
