@@ -127,7 +127,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: /images/avatar.gif
+  url: https://tiebapic.baidu.com/forum/w%3D580/sign=d1293635da01a18bf0eb1247ae2e0761/cfcff11f3a292df5ba031c0ce1315c6035a8738c.jpg
   # If true, the avatar will be dispalyed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.
