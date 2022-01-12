@@ -7,10 +7,10 @@ tags:
   - 天地伟业
   - 监控
   - VLC
-  - hls
+  - HLS
   - m3u8
-categories:
-  - 其他
+categories: 其他
+description: 国内主流监控设备视频流的播放
 ---
 
 ## 监控设备 rtsp 流的格式

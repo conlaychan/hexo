@@ -3,8 +3,8 @@ title: Java 中线程的状态
 date: 2021-08-29 11:11:53
 tags:
   - 线程
-categories:
-  - java
+categories: java
+description: Java 中线程的状态
 ---
 
 ### 看源码

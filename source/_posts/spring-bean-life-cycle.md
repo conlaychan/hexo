@@ -3,8 +3,8 @@ title: SpringBean的生命周期
 date: 2022-01-10
 tags:
   - spring
-categories:
-  - java
+categories: java
+description: SpringBean的生命周期
 ---
 
 ### 简而言之

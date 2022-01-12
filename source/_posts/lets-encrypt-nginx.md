@@ -4,8 +4,8 @@ date: 2022-01-10
 tags:
   - lets encrypt
   - nginx
-categories:
-  - 运维
+categories: 运维
+description: let's encrypt nginx
 ---
 
 ### 环境

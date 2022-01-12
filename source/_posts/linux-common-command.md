@@ -4,8 +4,8 @@ date: 2022-01-11 17:07:35
 tags:
   - ubuntu
   - linux
-categories:
-  - 运维
+categories: 运维
+description: Ubuntu常用命令
 ---
 
 ### 查看Linux版本

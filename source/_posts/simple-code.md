@@ -3,8 +3,8 @@ title: 算法：冒泡排序，二分查找，约瑟夫环
 date: 2022-01-10
 tags:
   - 算法
-categories:
-  - java
+categories: java
+description: Java 实现：冒泡排序，二分查找，约瑟夫环
 ---
 
 ## 冒泡排序
