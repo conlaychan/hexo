@@ -4,7 +4,7 @@ date: 2021-08-29 11:11:53
 tags:
   - 线程
 categories: java
-description: Java 中线程的状态
+description: 查看 Thread.State 枚举类我们可以看到Java中线程有以下几种状态：初始(NEW)、运行(RUNNABLE)、阻塞(BLOCKED)、等待(WAITING)、限时等待(TIMED_WAITING)、终止(TERMINATED)
 ---
 
 ### 看源码

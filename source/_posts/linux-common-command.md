@@ -5,7 +5,7 @@ tags:
   - ubuntu
   - linux
 categories: 运维
-description: Ubuntu常用命令
+description: linux（Ubuntu）常用命令：远程密码登录、软件源、磁盘查看、docker、apt-daily、端口查看
 ---
 
 ### 查看Linux版本

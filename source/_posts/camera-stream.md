@@ -10,7 +10,7 @@ tags:
   - HLS
   - m3u8
 categories: 其他
-description: 国内主流监控设备视频流的播放
+description: 国内主流监控设备（海康、大华、天地伟业）视频流（rtsp/hls）的播放：VLC media player、Jessibuca。
 ---
 
 ## 监控设备 rtsp 流的格式

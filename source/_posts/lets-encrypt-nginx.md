@@ -5,7 +5,7 @@ tags:
   - lets encrypt
   - nginx
 categories: 运维
-description: let's encrypt nginx
+description: 白嫖 let's encrypt 为网站的 nginx 服务器设置 https 证书（使用域名验证方式）
 ---
 
 ### 环境

@@ -7,7 +7,7 @@ tags:
   - PotPlayer
   - VLC
 categories: 其他
-description: HLS视频流的播放和下载
+description: HLS（m3u8）视频流的播放和下载：PotPlayer、VLC media player，下载工具。
 ---
 ## 在线播放
 ### PotPlayer

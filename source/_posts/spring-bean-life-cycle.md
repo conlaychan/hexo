@@ -4,7 +4,7 @@ date: 2022-01-10
 tags:
   - spring
 categories: java
-description: SpringBean的生命周期
+description: 简单来说就是：构造器->依赖注入->各种各样的aware->自定义初始化->自定义销毁，InstantiationAwareBeanPostProcessor穿插在构造器前后，BeanPostProcessor穿插在自定义初始化前后
 ---
 
 ### 简而言之

@@ -4,7 +4,7 @@ date: 2022-01-10
 tags:
   - jvm
 categories: java
-description: 使用 java.ext.dirs 加载额外的 lib 目录
+description: 众所周知：执行 java 命令时指定参数 java.ext.dirs 可令 jvm 额外加载特定目录下的 jar 文件
 ---
 
 * 众所周知：执行 java 命令时指定参数 java.ext.dirs 可令 jvm 额外加载特定目录下的 jar 文件
