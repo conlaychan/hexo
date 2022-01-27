@@ -1,0 +1,12 @@
+User-agent: *
+
+Allow: /
+Allow: /archives/
+Allow: /categories/
+
+Disallow: /vendors/
+Disallow: /css/
+Disallow: /fancybox/
+
+Sitemap: https://blog.crag.top/sitemap.xml
+Sitemap: https://blog.crag.top/baidusitemap.xml
