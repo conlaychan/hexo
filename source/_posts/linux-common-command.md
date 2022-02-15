@@ -28,9 +28,21 @@ sudo passwd root
 
 ### 修改Ubuntu软件源
 
-> 建议安装系统阶段就指定mirror地址为  http://mirrors.aliyun.com/ubuntu/  。
->
-> 若已安装完系统，Ubuntu 的软件源配置文件是 /etc/apt/sources.list。将系统自带的该文件做个备份，写入新内容参照 https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/。然后执行 apt-get update 更新下列表。
+建议安装系统阶段就指定mirror地址为  http://mirrors.163.com/ubuntu/  。
+
+若已安装完系统，Ubuntu 的软件源配置文件是 /etc/apt/sources.list。将系统自带的该文件做个备份，写入新内容：
+
+> deb http://mirrors.163.com/ubuntu/ focal main restricted universe multiverse
+> 
+> deb http://mirrors.163.com/ubuntu/ focal-security main restricted universe multiverse
+> 
+> deb http://mirrors.163.com/ubuntu/ focal-updates main restricted universe multiverse
+> 
+> deb http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse
+> 
+> deb http://mirrors.163.com/ubuntu/ focal-backports main restricted universe multiverse
+
+然后执行 apt-get update 更新下列表。
 
 ### 设置命令行前面的颜色
 
