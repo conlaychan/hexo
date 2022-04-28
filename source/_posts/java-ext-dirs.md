@@ -12,8 +12,11 @@ description: 众所周知：执行 java 命令时指定参数 java.ext.dirs 可�
     * $JAVA_HOME/jre/lib/ext （Linux）
     * %JAVA_HOME%/jre/lib/ext （Windows）
 * 假设我们要令 jvm 额外加载相对路径 lib 下的 jar 文件，完整命令为：
-    * java -Djava.ext.dirs="$JAVA_HOME/jre/lib/ext<font color="red">**:**</font>lib" -jar hello.jar （Linux，用冒号分隔，引号可有可无）
-    * java -Djava.ext.dirs="%JAVA_HOME%/jre/lib/ext<font color="red">**;**</font>lib" -jar hello.jar （Windows，用分号分隔，必须有引号）
+```shell
+  java -Djava.ext.dirs="$JAVA_HOME/jre/lib/ext:lib" -jar hello.jar （Linux，用冒号分隔，引号可有可无）
+
+  java -Djava.ext.dirs="%JAVA_HOME%/jre/lib/ext;lib" -jar hello.jar （Windows，用分号分隔，必须有引号）
+```
 * 注意：以上我都是假定你正确配置了环境变量 JAVA_HOME 指向 JDK 的主目录！
 * 测试环境：JDK8
 

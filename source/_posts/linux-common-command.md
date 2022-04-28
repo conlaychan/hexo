@@ -108,9 +108,11 @@ docker rm $(docker ps -a -q)
 #### 6、设置 docker 镜像服务器
 
 > 在文件 /etc/docker/daemon.json 中添加以下内容
-> {
->    "registry-mirrors" : ["https://docker.mirrors.ustc.edu.cn"]
-> }
+```json
+ {
+    "registry-mirrors" : ["https://docker.mirrors.ustc.edu.cn"]
+ }
+```
 >
 > 然后重启docker服务
 >
@@ -161,9 +163,7 @@ systemctl status apt-daily.timer
 
 注意结果中的：
 
-> ```
 > Active: inactive (dead)
-> ```
 
 ### shell脚本中获取脚本文件自身所在目录
 
