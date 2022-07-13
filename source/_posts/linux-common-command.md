@@ -105,11 +105,16 @@ docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 ```
 
-#### 6、设置 docker 镜像服务器
+#### 6、简单设置 docker 引擎
 
 > 在文件 /etc/docker/daemon.json 中添加以下内容
 ```json
  {
+    "log-driver": "json-file",
+    "log-opts": {
+        "max-size": "100m",
+        "max-file": "1"
+    }
     "registry-mirrors" : ["https://docker.mirrors.ustc.edu.cn"]
  }
 ```
@@ -117,6 +122,8 @@ docker rm $(docker ps -a -q)
 > 然后重启docker服务
 >
 > service docker restart
+
+docker 为容器保存的标准输出日志（即用 docker logs 命令看到的日志）默认情况下似乎会无限量保存，所以限制下大小。
 
 #### 7、连接到其他机器上的 docker 服务
 
