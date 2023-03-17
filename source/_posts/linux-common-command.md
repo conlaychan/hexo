@@ -108,14 +108,19 @@ docker rm $(docker ps -a -q)
 #### 6、简单设置 docker 引擎
 
 > 在文件 /etc/docker/daemon.json 中添加以下内容
-```json
+```text
  {
     "log-driver": "json-file",
     "log-opts": {
         "max-size": "100m",
         "max-file": "1"
     }
-    "registry-mirrors" : ["https://docker.mirrors.ustc.edu.cn"]
+  "registry-mirrors": [
+    "https://dockerproxy.com",
+    "https://hub-mirror.c.163.com",
+    "https://mirror.baidubce.com",
+    "https://ccr.ccs.tencentyun.com"
+  ]
  }
 ```
 >

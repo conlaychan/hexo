@@ -8,7 +8,7 @@ categories: 运维
 description: ubuntu 中使用 apt 安装 MySQL8 后关闭 binlog、开放端口、设置root密码和远程登录
 ---
 
-* apt install mysql-server
+* apt install mysql-server-8.0
 
 * 设置root密码和远程登录
 ```shell
