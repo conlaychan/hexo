@@ -33,6 +33,23 @@ RUN apt update \
   
 ```
 
+* ubuntu20:fat 含有openjdk8以及各种网络工具并修改了时区，可用于测试docker运行环境
+```text
+FROM ubuntu:20.04
+ 
+ENV DEBIAN_FRONTEND noninteractive #tzdata 静默认安装
+ 
+RUN apt update \
+  && apt install -y tzdata telnet wget net-tools iputils-ping openjdk-8-jre-headless --no-install-recommends \
+  && echo "Asia/Shanghai" > /etc/timezone  \
+  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+  && dpkg-reconfigure -f noninteractive tzdata \
+  && apt clean \
+  && apt autoremove -y \
+  && rm -rf /var/lib/apt/lists/*
+  
+```
+
 * centos7:fat 含有openjdk8以及各种网络工具并修改了时区，可用于测试docker运行环境
 ```text
 FROM centos:7
