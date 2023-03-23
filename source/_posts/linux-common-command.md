@@ -148,10 +148,16 @@ sudo alien -d --script  jdk-8u212-linux-x64.rpm
 sudo dpkg -i jdk1.8_1.8.0212-1_amd64.deb
 ```
 
-### nohup 命令禁止产生输出文件
+### nohup 命令强制后台运行
 
 ```shell
-nohup java -jar app.jar >/dev/null 2>&1 &
+nohup java -jar app.jar >/dev/null 2>log &  # 如果报错了会输出错误日志
+nohup java -jar app.jar >/dev/null 2>&1 &   # 如果错误信息也不想要的话
+```
+
+### java -jar debug模式启动
+```shell
+java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n -jar app.jar
 ```
 
 ### 关闭 apt-daily.service
