@@ -12,7 +12,7 @@ description: ubuntu 中使用 apt 安装 MySQL8 后关闭 binlog、开放端口�
 
 * 设置root密码和远程登录
 ```shell
-mysql -u root # 初始无密码！
+sudo mysql -u root # 初始无密码！非root用户必须带上sudo！
 use mysql;
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NewPassword'; # 设置新密码
 update user set Host = '%' where User = 'root';
