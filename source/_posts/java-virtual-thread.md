@@ -1,5 +1,5 @@
 ---
-title: java21虚拟线程与spring环境集成配置
+title: java21虚拟线程与springboot3集成环境配置
 date: 2023-09-25 10:30:00
 tags:
   - java21
