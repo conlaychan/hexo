@@ -61,6 +61,7 @@ jdk:
 public class DemoApplication {
     public static final HttpClient HTTP_CLIENT = HttpClient.newBuilder()
             .cookieHandler(new CookieManager())
+            .connectTimeout(Duration.ofMillis(100))
             .executor(Executors.newCachedThreadPool(Thread.ofVirtual().name("HttpClient-v", 1).factory()))
             .build();
 }
