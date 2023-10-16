@@ -73,14 +73,14 @@ public class DemoApplication {
 @SpringBootApplication
 public class DemoApplication {
     @Bean
-    public TomcatConnectorCustomizer tomcatConnectorCustomizer(ServerProperties serverProperties) {
+    public TomcatProtocolHandlerCustomizer<?> tomcatProtocolHandlerCustomizer(ServerProperties serverProperties) {
         ServerProperties.Tomcat.Threads threads = serverProperties.getTomcat().getThreads();
         ThreadFactory factory = Thread.ofVirtual().name("tomcat-v", 1).factory();
         ThreadPoolExecutor executor = new ThreadPoolExecutor(
                 threads.getMinSpare(), threads.getMax(), 60L, TimeUnit.SECONDS,
                 new SynchronousQueue<>(), factory, new ThreadPoolExecutor.AbortPolicy()
         );
-        return connector -> connector.getProtocolHandler().setExecutor(executor);
+        return protocolHandler -> protocolHandler.setExecutor(executor);
     }
 }
 ```
