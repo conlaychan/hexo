@@ -13,6 +13,10 @@ categories: java
 description: java21虚拟线程与spring环境集成配置tomcat、hikari、lettuce、scheduler
 ---
 
+# spring boot 版本
+
+3.1.3
+
 # 配置虚拟线程的载体线程池
 
 如果服务器CPU核心数太多，且程序并不需要支持太多的并发量，则强烈建议配置一下，以减少使用的平台线程数。jdk源码位置：<font color="blue">java.lang.VirtualThread#createDefaultScheduler</font>，开放了3个配置项，对这3个选项的修改必须在加载<font color="blue">java.lang.VirtualThread</font>类之前！
