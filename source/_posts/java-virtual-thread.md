@@ -80,10 +80,12 @@ public class DemoApplication {
     public TomcatProtocolHandlerCustomizer<?> tomcatProtocolHandlerCustomizer(ServerProperties serverProperties) {
         ServerProperties.Tomcat.Threads threads = serverProperties.getTomcat().getThreads();
         ThreadFactory factory = Thread.ofVirtual().name("tomcat-v", 1).factory();
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(
+        org.apache.tomcat.util.threads.TaskQueue taskqueue = new org.apache.tomcat.util.threads.TaskQueue();
+        org.apache.tomcat.util.threads.ThreadPoolExecutor executor = new org.apache.tomcat.util.threads.ThreadPoolExecutor(
                 threads.getMinSpare(), threads.getMax(), 60L, TimeUnit.SECONDS,
-                new SynchronousQueue<>(), factory, new ThreadPoolExecutor.AbortPolicy()
+                taskqueue, factory, new org.apache.tomcat.util.threads.ThreadPoolExecutor.AbortPolicy()
         );
+        taskqueue.setParent(executor);
         return protocolHandler -> protocolHandler.setExecutor(executor);
     }
 }
