@@ -49,7 +49,7 @@ sudo passwd root
 > 在 ~/.bashrc 中添加以下内容：
 
 ```bash
-export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]$ "
+export PS1="\[\033[01;35m\]\u\[\e[31;1m\]@\[\e[33;1m\]\w\[\033[31m\]$ \[\033[00m\]"
 ```
 
 > 然后执行  source ~/.bashrc
@@ -108,13 +108,13 @@ docker rm $(docker ps -a -q)
 #### 6、简单设置 docker 引擎
 
 > 在文件 /etc/docker/daemon.json 中添加以下内容
-```text
+```json
  {
     "log-driver": "json-file",
     "log-opts": {
         "max-size": "100m",
         "max-file": "1"
-    }
+    },
   "registry-mirrors": [
     "https://dockerproxy.com",
     "https://hub-mirror.c.163.com",
