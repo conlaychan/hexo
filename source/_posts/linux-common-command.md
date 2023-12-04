@@ -8,6 +8,9 @@ categories: 运维
 description: linux（Ubuntu）常用命令：远程密码登录、软件源、磁盘查看、docker、apt-daily、端口查看
 ---
 
+### 适用版本
+ubuntu 18 ~ 22
+
 ### 查看Linux版本
 
 ```shell
@@ -169,6 +172,10 @@ systemctl stop apt-daily.timer
 systemctl disable apt-daily.timer
 systemctl stop apt-daily.service
 systemctl disable apt-daily.service
+systemctl stop apt-daily-upgrade.timer
+systemctl disable apt-daily-upgrade.timer
+systemctl stop apt-daily-upgrade.service
+systemctl disable apt-daily-upgrade.service
 systemctl mask apt-daily.service
 systemctl daemon-reload
 ```
