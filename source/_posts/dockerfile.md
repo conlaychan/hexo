@@ -52,16 +52,16 @@ RUN apt update \
 ```text
 FROM centos:7
 
-ENV TZ Asia/Shanghai
-ENV LANG zh_CN.utf8
-ENV LC_ALL zh_CN.utf8
-
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" >> /etc/timezone \
     && localedef -c -f UTF-8 -i zh_CN zh_CN.utf8 \
     && yum -y install java-1.8.0-openjdk net-tools telnet wget \
     && yum clean all \
     && rm -rf /var/cache/yum/*
+
+ENV TZ Asia/Shanghai
+ENV LANG zh_CN.utf8
+ENV LC_ALL zh_CN.utf8
 ```
 
 
