@@ -7,7 +7,7 @@ categories: 运维
 description: openjdk8、ubuntu20修改时区，centos7内置测试工具
 ---
 
-## openjdk8:local 东八区
+## openjdk:8-jre 东八区
 ### Dockerfile
 ```text
 FROM openjdk:8-jre
@@ -22,7 +22,7 @@ docker rmi openjdk:8-jre
 docker tag openjdk8:local openjdk:8-jre
 ```
 
-## openjdk21:local 东八区（jdk17同样做法）
+## openjdk:21-jre 东八区（jdk17同样做法）
 ### Dockerfile
 ```text
 FROM eclipse-temurin:21-jre
@@ -36,7 +36,7 @@ docker build -t openjdk:21-jre .
 docker rmi eclipse-temurin:21-jre
 ```
 
-## ubuntu20:local 东八区
+## ubuntu:20.04 东八区
 ### Dockerfile
 ```text
 FROM ubuntu:20.04
@@ -59,7 +59,8 @@ docker rmi ubuntu:20.04
 docker tag ubuntu20:local ubuntu:20.04
 ```
 
-## ubuntu:20.04-fat 含有openjdk8以及各种网络工具并修改了时区，可用于测试docker运行环境
+## ubuntu:20.04-fat
+含有openjdk8以及各种网络工具并修改了时区，可用于测试docker运行环境。
 ### Dockerfile
 ```text
 FROM ubuntu:20.04
@@ -80,7 +81,8 @@ RUN apt update \
 docker build -t ubuntu:20.04-fat .
 ```
 
-## centos:7-fat 含有openjdk8以及各种网络工具并修改了时区，可用于测试docker运行环境
+## centos:7-fat
+含有openjdk8以及各种网络工具并修改了时区，可用于测试docker运行环境。
 ### Dockerfile
 ```text
 FROM centos:7
