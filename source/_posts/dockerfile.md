@@ -101,6 +101,7 @@ ENV LC_ALL zh_CN.utf8
 ### shell
 ```shell
 docker build -t centos:7-fat .
+docker rmi centos:7
 ```
 
 ------
