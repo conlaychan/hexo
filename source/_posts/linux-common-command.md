@@ -62,6 +62,22 @@ export PS1="\[\033[01;35m\]\u\[\e[31;1m\]@\[\e[33;1m\]\w\[\033[31m\]$ \[\033[00m
 apt list --installed
 ```
 
+### iptables
+```shell
+#查询入栈规则
+iptables -L INPUT -n --line-numbers
+
+#开放入栈端口
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p udp --dport 1143 -j ACCEPT
+
+#默认入栈策略为“丢弃”
+iptables -P INPUT DROP
+
+#删除入栈规则
+iptables -D INPUT 1
+```
+
 ### 查看磁盘容量和使用量
 
 ```shell
