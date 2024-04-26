@@ -9,6 +9,9 @@ description: openjdk8、ubuntu20修改时区，centos7内置测试工具
 
 ## openjdk:8-jre 东八区
 ### Dockerfile
+
+vim Dockerfile_openjdk8
+
 ```text
 FROM openjdk:8-jre
 
@@ -17,13 +20,17 @@ ENV TZ Asia/Shanghai
 ```
 ### shell
 ```shell
-docker build -t openjdk8:local .
+docker build -t openjdk8:local -f Dockerfile_openjdk8 .
 docker rmi openjdk:8-jre
 docker tag openjdk8:local openjdk:8-jre
+docker rmi openjdk8:local
 ```
 
 ## openjdk:21-jre 东八区（jdk17同样做法）
 ### Dockerfile
+
+vim Dockerfile_openjdk21
+
 ```text
 FROM eclipse-temurin:21-jre
 
@@ -32,19 +39,23 @@ ENV TZ Asia/Shanghai
 ```
 ### shell
 ```shell
-docker build -t openjdk:21-jre .
+docker build -t openjdk:21-jre -f Dockerfile_openjdk21 .
 docker rmi eclipse-temurin:21-jre
 ```
 
-## ubuntu:20.04 东八区
+## ubuntu:20.04
+含有各种网络工具并修改了时区，可用于测试docker运行环境。
 ### Dockerfile
+
+vim Dockerfile_ubuntu20
+
 ```text
 FROM ubuntu:20.04
 
-ENV DEBIAN_FRONTEND noninteractive #tzdata 静默认安装
+ENV DEBIAN_FRONTEND noninteractive #tzdata 静默安装
 
 RUN apt update \
-  && apt install -y tzdata --no-install-recommends \
+  && apt install -y tzdata telnet wget net-tools iputils-ping --no-install-recommends \
   && echo "Asia/Shanghai" > /etc/timezone  \
   && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
   && dpkg-reconfigure -f noninteractive tzdata \
@@ -54,43 +65,25 @@ RUN apt update \
 ```
 ### shell
 ```shell
-docker build -t ubuntu20:local .
+docker build -t ubuntu20:local -f Dockerfile_ubuntu20 .
 docker rmi ubuntu:20.04
 docker tag ubuntu20:local ubuntu:20.04
+docker rmi ubuntu20:local
 ```
 
-## ubuntu:20.04-fat
-含有openjdk8以及各种网络工具并修改了时区，可用于测试docker运行环境。
+## CentOS:7
+含有各种网络工具并修改了时区，可用于测试docker运行环境。
 ### Dockerfile
-```text
-FROM ubuntu:20.04
 
-ENV DEBIAN_FRONTEND noninteractive #tzdata 静默认安装
+vim Dockerfile_centos7
 
-RUN apt update \
-  && apt install -y tzdata telnet wget net-tools iputils-ping openjdk-8-jre-headless --no-install-recommends \
-  && echo "Asia/Shanghai" > /etc/timezone  \
-  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-  && dpkg-reconfigure -f noninteractive tzdata \
-  && apt clean \
-  && apt autoremove -y \
-  && rm -rf /var/lib/apt/lists/*
-```
-### shell
-```shell
-docker build -t ubuntu:20.04-fat .
-```
-
-## centos:7-fat
-含有openjdk8以及各种网络工具并修改了时区，可用于测试docker运行环境。
-### Dockerfile
 ```text
 FROM centos:7
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" >> /etc/timezone \
     && localedef -c -f UTF-8 -i zh_CN zh_CN.utf8 \
-    && yum -y install java-1.8.0-openjdk net-tools telnet wget \
+    && yum -y install net-tools telnet wget \
     && yum clean all \
     && rm -rf /var/cache/yum/*
 
@@ -100,9 +93,35 @@ ENV LC_ALL zh_CN.utf8
 ```
 ### shell
 ```shell
-docker build -t centos:7-fat .
+docker build -t centos7:local -f Dockerfile_centos7 .
 docker rmi centos:7
+docker tag centos7:local centos:7
+docker rmi centos7:local
 ```
+
+## MySQL:8 东八区
+
+### Dockerfile
+
+vim Dockerfile_mysql8
+
+```shell
+FROM mysql:8.0.22
+
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone
+ENV TZ Asia/Shanghai
+```
+
+### shell
+
+```shell
+docker build -t mysql8:local -f Dockerfile_mysql8 .
+docker rmi mysql:8.0.22
+docker tag mysql8:local mysql:8.0.22
+docker rmi mysql8:local
+```
+
+
 
 ------
 ![福利](/images/骚图/三国杀/孙尚香2.jpg)
