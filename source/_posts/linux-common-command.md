@@ -29,6 +29,32 @@ sudo passwd root
 
 > 编辑文件 /etc/ssh/sshd_config，找到  PermitRootLogin ，将其值设为 yes
 
+### 管理其他用户
+
+#### 1、新增一个用户
+
+```shell
+sudo useradd -r -m -s /bin/bash ubuntu
+```
+-r：建立系统账号
+
+-m：自动创建home目录
+
+-s：指定用户登录后使用的shell
+
+ubuntu：用户名
+
+#### 2、将用户ubuntu加入sudo组
+```shell
+sudo usermod -aG sudo ubuntu
+```
+
+#### 3、删除用户ubuntu
+```shell
+sudo userdel ubuntu
+sudo rm -rf /home/ubuntu
+```
+
 ### 修改Ubuntu软件源
 
 建议安装系统阶段就指定mirror地址为  http://mirrors.163.com/ubuntu/  。
