@@ -195,10 +195,7 @@ sudo dpkg -i jdk1.8_1.8.0212-1_amd64.deb
 
 ### nohup 命令强制后台运行
 
-```shell
-nohup java -jar app.jar >/dev/null 2>log &  # 如果报错了会输出错误日志
-nohup java -jar app.jar >/dev/null 2>&1 &   # 如果错误信息也不想要的话
-```
+<font color="blue">nohup</font> java -jar app.jar <font color="blue">>/dev/null 2>&1 &</font>
 
 ### java -jar debug模式启动
 ```shell
